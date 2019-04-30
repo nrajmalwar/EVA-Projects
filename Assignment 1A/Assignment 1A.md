@@ -4,7 +4,7 @@ In this assignment, we will manually provide the values of 3x3 kernel in order t
 
 First, let's have a look at our image:
 
-![picture alt](Images/Helvetica_Normal.png)
+![alt text](Images/Helvetica_Normal.png)
 
 If we just look at the edges in the image, we will get the following image:
 
@@ -29,3 +29,18 @@ A horizontal edge is detected when there is a sudden change in pixel intensity a
 A 45 degree angle is detected when there is a sudden change in pixel intensity along the 45 degree or 135 degree angles.
 
 ![picture alt](Images/45_Degrees.png)
+
+## 4. Blur ##
+
+
+![picture alt](Images/Blur.png)
+
+## 5. Sharpen ##
+
+
+![picture alt](Images/Sharpen.png)
+
+## 6. Identity ##
+
+
+![picture alt](Images/Identity.png)
