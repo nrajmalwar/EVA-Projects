@@ -6,6 +6,7 @@ First, let's have a look at our image:
 
 ![alt text](Images/Helvetica_Normal.png)
 
+
 If we just look at the edges in the image, we will get the following image:
 
 ![picture alt](Images/Helvetica_Edges.png)
@@ -32,15 +33,18 @@ A 45 degree angle is detected when there is a sudden change in pixel intensity a
 
 ## 4. Blur ##
 
+A blur kernel changes a single pixel value to the average of its neighbouring pixel values.
 
 ![picture alt](Images/Blur.png)
 
 ## 5. Sharpen ##
 
+The sharpen kernel emphasizes difference in adjacent pixel values
 
 ![picture alt](Images/Sharpen.png)
 
 ## 6. Identity ##
 
+The identity kernel does not modify any pixel values and gives the original image as output.
 
 ![picture alt](Images/Identity.png)
