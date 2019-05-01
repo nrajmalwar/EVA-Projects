@@ -54,3 +54,6 @@ The two sided gradient plays on symmetry, and cancels out the contribution of th
 
 When it comes to modern GPU resources, they are also optimized for odd sized kernels.
 
+## How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)? ##
+
+![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/Convolution%20Calculations.png)
