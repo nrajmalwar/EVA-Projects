@@ -6,11 +6,11 @@ When we extract a particular feature from an image (or data), we call this a cha
 
 To give an example, consider you are painting a landscape picture. You have your painting canvas in place and you are ready to paint. So you quickly grab your basic ingredients - 10 bottles of paint (for differnet colors) and 10 painting brushes (for different strokes). Here, your bottles of paint and brushes are your basic channels. Some simple or complex combination of these tools will give some more channels. Like for example, a horizontal stroke can be called a channel. You can have this stroke in 10 different colors and 10 different brushes, so you add some more channels of horizontal strokes.
 
-![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/Oil Paint Bottles.jpg)
+![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/Oil%20Paint%20Bottles.jpg  | width=100)
 
-![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/Paint brushes.jpg)
+![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/Paint%20brushes.jpg)
 
-![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/Brush Strokes.jpg)
+![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/Brush%20Strokes.jpg)
 
 Similarly, when we do convolution on an image, we first extract some low level features and put them into a layer of channels. Then we do convolution again, and these channels give us more channels containing mid level features. We put these channels into a separate bucket. Similarly, with every convolution we get higher level features which can be subsequently used to construct our image.
 
