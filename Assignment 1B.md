@@ -32,7 +32,7 @@ A 3x3 Kernel with a central value
 
 ![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/3x3.png)
 
-A 2x2 Kernel with no central value
+A 2x2 Kernel has no central value
 
 ![picture alt](https://github.com/nrajmalwar/Project-1/blob/master/Images/2x2.png)
 
