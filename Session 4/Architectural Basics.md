@@ -16,4 +16,24 @@ We bring down the number of channels to the output number of classes using a 1x1
 
 We compile the model and then **add validation checks [22]** while fitting the model. The validation checks are crucial and required to be added from the beginning because our model can behave very differently on the training and the test data. It can start overfitting from the very beginnning in some cases. We check the first two epochs of our model and **know whether the network is going well very early [20]**. The value of training/validation accuracy and also the gap between gives a fair idea of how this model is going to behave eventually. A network which starts with a low accuracy cannot be expected to pick up and have a higher accuracy than a network which has a higher accuracy to begin with.
 
+With a model in place, we aim to achieve 99% validation accuracy in 10 epochs.
+
 ## Overcome Parameter Contraints and Improve Architecture - Second Model
+
+We right away follow the architecture from our first model and decrease the number of parameters to less than 15k. We aim for a validation accuracy of 99% which is a good benchmark for a simple model like this.
+
+We take the **channels and the number of kernels [8]** into consideration to capture the expressivity of our images and the inter/intra class variations. Based on how many kernels we add, we can now **position the MaxPooling [11]** layer and inturn decide the **position of transition layer [13]**. Deep neural networks have the ability to capture features at different levels of abstraction from edges, gradients, textures to patterns, parts of objects, object. This is where the **concept of transition layer [12]** comes in which aims to sum up one level of features and move to the next. 
+
+The **distance of MaxPooling [17]** is at least 3-4 Convolution layer from the prediction. By the time we reach the prediction layers, the final layers should be capable of predicting our images, so we want this whole information to be passed to the softmax layer without adding a MaxPooling layer.
+
+## Achieve Target Accuracy - Third Model
+
+Now, we add additional features to our model to achieve an accuracy of 99.4%. We first add **Batch Normalization [9]** after every Convolution layer. Batch Normalization brings the kernel values with mean 0 and standard deviation 1. So the values lie anywhere between -1 and 1. Somehwat similar to MaxPooing, we keep **Batch Normalization at some distance [18]** from the prediction layer. We do not add Batch Normalization after the last convolution layer, as we want to feed raw values to our softmax function. 
+
+If we run our model now, we can see that the training accuracy saturates to a higher value compared to the validation accuracy. If we continue to train further, only the training keeps increasing whereas the validation accuracy has saturated at some lower value. This is **when we introduce DropOut [16]** in our network when we know that the model is overfitting on the training set. We initially add a **DropOut [15]** layer after every Convolution layer, keep a minimal DropOut rate of 0.1. However, this strategy did not improve our results drastically so we removed and kept the DropOut layers at only two places and increased the rate to 0.25. Now the network trains better and does not overfit so easily.
+
+Due to the addition of DropOuts, our model now trains rather slowly as some kernels are getting shut off with every iteration. So we increase the **number of epochs [14]** at this point to allow it time to learn the dataset completely.
+
+## Further Improvements - Fourth Model
+
+
