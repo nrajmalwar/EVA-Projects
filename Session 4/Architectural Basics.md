@@ -36,4 +36,11 @@ Due to the addition of DropOuts, our model now trains rather slowly as some kern
 
 ## Further Improvements - Fourth Model
 
+In this model, we try to decrease the computution time for model training and try to further improve the validation accuracy. 
+
+Till now we ran our model with the default batch size of 32. We can now try a higher **Batch size [21]** which  will train the model faster. However, a higher batch requires the right value of **learning rate [7]** otherwise it may not be useful. There's still a limit to how big a batch size can be and we will try to reach this limit. It was found that with batch size of 256 and 512, the model trains extremely fast, with just 3-4 seconds per epoch. But no matter how small learning rate we choose, it is unable to perform well. We go ahead with 128 batch which works best with a learning rate of 0.003.
+
+We also used **LRScheduler [23]** where we can define how the learning rate change with time. Here, we decay the learning rate with each epoch because as the model reaches higher accuracy, we want to get hit a better minima in our loss function. A smaller learning rate helps to achieve this.
+
+Next, we try different optimizers like **Adam vs. SGD [24]**. One approach towards choosing different optimizers would be to read literature on this particular problem, and see if there is a consensus to choosing a optimizer, we can try that. Otherwise, we just try the optimizers and compare the results. In our case, Adam optimizer performed far better compared to SGD.
 
