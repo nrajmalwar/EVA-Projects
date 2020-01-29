@@ -19,7 +19,7 @@ def normalize(x):
   """Normalize the values of input image"""
   mean = np.mean(x, axis=(0,1,2))
   std = np.std(x, axis=(0,1,2))
-  norm = (x - mean) / std).astype('float32')
+  norm = ((x - mean) / std).astype('float32')
 
   return norm
 
