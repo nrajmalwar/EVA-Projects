@@ -14,7 +14,7 @@ import tensorflow.contrib.eager as tfe
 import matplotlib.pyplot as plt
 from tqdm import tqdm_notebook as tqdm
 
-def model_training(model, original_train_set, test_set, EPOCHS, BATCH_SIZE, WEIGHT_DECAY, opt, global_step, len_train, lr_schedule, data_aug):
+def model_training(model, original_train_set, test_set, EPOCHS, LEARNING_RATE, BATCH_SIZE, WEIGHT_DECAY, opt, global_step, len_train, lr_schedule, data_aug):
   """Train the model"""
   t = time.time()
 
@@ -54,6 +54,6 @@ def model_training(model, original_train_set, test_set, EPOCHS, BATCH_SIZE, WEIG
     list_train_loss.append(train_loss)
     list_train_acc.append(train_acc)
 
-    print('epoch:', epoch+1, 'lr:', lr_schedule(epoch+1), 'train loss:', train_loss / len_train, 'train acc:', train_acc / len_train, 'val loss:', test_loss / len_test, 'val acc:', test_acc / len_test, 'time:', time.time() - t)
+    print('epoch:', epoch+1, 'lr:', lr_schedule(epoch+1, EPOCHS, LEARNING_RATE), 'train loss:', train_loss / len_train, 'train acc:', train_acc / len_train, 'val loss:', test_loss / len_test, 'val acc:', test_acc / len_test, 'time:', time.time() - t)
 
   return list_train_acc, list_test_acc, list_train_loss, list_test_loss
