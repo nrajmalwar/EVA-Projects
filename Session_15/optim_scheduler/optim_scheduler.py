@@ -10,17 +10,17 @@ Original file is located at
 import numpy as np
 import tensorflow as tf
 
-def lr_schedule(epochs, learning_rate):
+def lr_schedule(t, epochs, learning_rate):
   """Define the interpolated values for learning rate"""
-  lr_sch = lambda t: np.interp([t], [0, (epochs+1)//5, epochs], [0, learning_rate, 0])[0]
+  lr_sch = np.interp([t], [0, (epochs+1)//5, epochs], [0, learning_rate, 0])[0]
 
   return lr_sch
 
-def lr_func(len_train, batch_size):
+def lr_func(len_train, batch_size, epochs, learning_rate):
   """Define the learning rate function"""
   global_step = tf.train.get_or_create_global_step()
   batches_per_epoch = len_train//batch_size + 1
-  lr_function = lambda: lr_schedule(global_step/batches_per_epoch)/batch_size
+  lr_function = lr_schedule(global_step/batches_per_epoch, epochs, learning_rate)/batch_size
 
   return lr_function
 
