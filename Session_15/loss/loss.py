@@ -14,7 +14,7 @@ import tensorflow.contrib.eager as tfe
 import matplotlib.pyplot as plt
 from tqdm import tqdm_notebook as tqdm
 
-def model_training(model, train_set, test_set, epochs, batch_size, len_train, lr_schedule, data_aug, t):
+def model_training(model, original_train_set, test_set, EPOCHS, BATCH_SIZE, len_train, lr_schedule, data_aug):
   """Train the model"""
   t = time.time()
 
@@ -25,7 +25,7 @@ def model_training(model, train_set, test_set, epochs, batch_size, len_train, lr
 
   for epoch in range(EPOCHS):
     train_loss = test_loss = train_acc = test_acc = 0.0
-  
+
     train_set = original_train_set.map(data_aug).map(data_aug).shuffle(len_train).batch(BATCH_SIZE).prefetch(1)
 
     tf.keras.backend.set_learning_phase(1)
@@ -45,14 +45,14 @@ def model_training(model, train_set, test_set, epochs, batch_size, len_train, lr
     tf.keras.backend.set_learning_phase(0)
     for (x, y) in test_set:
       loss, correct = model(x, y)
-    
+
       test_loss += loss.numpy()
       test_acc += correct.numpy()
 
     list_test_loss.append(test_loss)
     list_test_acc.append(test_acc)
     list_train_loss.append(train_loss)
-    list_train_acc.append(train_acc)  
+    list_train_acc.append(train_acc)
 
     print('epoch:', epoch+1, 'lr:', lr_schedule(epoch+1), 'train loss:', train_loss / len_train, 'train acc:', train_acc / len_train, 'val loss:', test_loss / len_test, 'val acc:', test_acc / len_test, 'time:', time.time() - t)
 
