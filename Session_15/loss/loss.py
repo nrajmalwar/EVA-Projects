@@ -14,7 +14,7 @@ import tensorflow.contrib.eager as tfe
 import matplotlib.pyplot as plt
 from tqdm import tqdm_notebook as tqdm
 
-def model_training(model, original_train_set, test_set, EPOCHS, BATCH_SIZE, len_train, lr_schedule, data_aug):
+def model_training(model, original_train_set, test_set, EPOCHS, BATCH_SIZE, WEIGHT_DECAY, len_train, lr_schedule, data_aug):
   """Train the model"""
   t = time.time()
 
