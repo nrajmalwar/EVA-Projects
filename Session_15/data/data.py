@@ -19,17 +19,15 @@ def normalize(x):
   """Normalize the values of input image"""
   mean = np.mean(x, axis=(0,1,2))
   std = np.std(x, axis=(0,1,2))
-  normalize = lambda x: ((x - mean) / std).astype('float32')
-  x = normalize(x)
+  norm = (x - mean) / std).astype('float32')
 
-  return x
+  return norm
 
 def pad4(x):
   """Pad 4 zeros across the edges of input image"""
-  pad4 = lambda x: np.pad(x, [(0, 0), (4, 4), (4, 4), (0, 0)], mode='reflect')
-  x = pad4(x)
+  pad = np.pad(x, [(0, 0), (4, 4), (4, 4), (0, 0)], mode='reflect')
 
-  return x
+  return pad
 
 def Cutout(x_train, y_train, num_images):
   """Function to add cutout augmentation"""

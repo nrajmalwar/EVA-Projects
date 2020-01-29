@@ -30,8 +30,8 @@ def momentum_optimizer(lr_func, lr_momentum):
 
   return opt
 
-def data_aug():
+def data_aug(x, y):
   """Apply data augmentations"""
-  aug = lambda x, y: (tf.image.random_flip_left_right(tf.random_crop(x, [32, 32, 3])), y)
+  aug = tf.image.random_flip_left_right(tf.random_crop(x, [32, 32, 3])), y
 
   return aug
