@@ -16,9 +16,9 @@ def lr_schedule(t, epochs, learning_rate):
 
   return lr_sch
 
-def lr_func(len_train, batch_size, epochs, learning_rate):
+def lr_func(len_train, batch_size, epochs, learning_rate, global_step):
   """Define the learning rate function"""
-  global_step = tf.train.get_or_create_global_step()
+  # global_step = tf.train.get_or_create_global_step()
   batches_per_epoch = len_train//batch_size + 1
   lr_function = lr_schedule(global_step/batches_per_epoch, epochs, learning_rate)/batch_size
 
