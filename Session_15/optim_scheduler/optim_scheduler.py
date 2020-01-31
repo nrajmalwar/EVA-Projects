@@ -12,17 +12,17 @@ import tensorflow as tf
 
 def lr_schedule(t, epochs, learning_rate):
   """Define the interpolated values for learning rate"""
-  lr_sch = np.interp([t], [0, (epochs+1)//5, epochs], [0, learning_rate, 0])[0]
+  return np.interp([t], [0, (epochs+1)//5, epochs], [0, learning_rate, 0])[0]
 
-  return lr_sch
+  # return lr_sch
 
 def lr_func(len_train, batch_size, epochs, learning_rate, global_step):
   """Define the learning rate function"""
   # global_step = tf.train.get_or_create_global_step()
   batches_per_epoch = len_train//batch_size + 1
-  lr_function = lr_schedule(global_step/batches_per_epoch, epochs, learning_rate)/batch_size
+  return lr_schedule(global_step/batches_per_epoch, epochs, learning_rate)/batch_size
 
-  return lr_function
+  # return lr_function
 
 def momentum_optimizer(lr_func, lr_momentum):
   """Define the optimiser function"""
@@ -32,6 +32,6 @@ def momentum_optimizer(lr_func, lr_momentum):
 
 def data_aug(x, y):
   """Apply data augmentations"""
-  aug = tf.image.random_flip_left_right(tf.random_crop(x, [32, 32, 3])), y
+  return tf.image.random_flip_left_right(tf.random_crop(x, [32, 32, 3])), y
 
-  return aug
+  # return aug
