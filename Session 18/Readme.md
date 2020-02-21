@@ -8,6 +8,6 @@
 
 Link to youtube video - https://youtu.be/HZwY8XTVMsE
 
-1st Part - Original video
-2nd Part - Face Alignment using 5 point landmark detector
+1st Part - Original video\
+2nd Part - Face Alignment using 5 point landmark detector\
 3rd Part - Face Alignment + Optical Flow Stabilization of 68 landmark points
