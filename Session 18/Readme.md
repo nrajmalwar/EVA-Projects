@@ -6,8 +6,8 @@
 4. Calculate Optical flow for these 68 points for every frame
 5. Stabilize Optical Flow using LK method
 
-Link to youtube video - https://youtu.be/3gDrTMB3LpQ
+Link to youtube video - https://youtu.be/HZwY8XTVMsE
 
-Still after many attempts, I was unable to combine the 3 videos side by side . Google colab was crashing every single time. I need to get someone's help on this.
-
-**Please watch the entire video as I have stitched the 3 videos together one after another.**
+1st Part - Original video
+2nd Part - Face Alignment using 5 point landmark detector
+3rd Part - Face Alignment + Optical Flow Stabilization of 68 landmark points
