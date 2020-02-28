@@ -11,3 +11,7 @@ Real images from the dataset-
 Fake images generated from GAN (From epoch 10 to epoch 400)-
 
 ![alt text](https://github.com/nrajmalwar/Project/blob/master/Images/Generated_images_gif.gif)
+
+Fake images generated from GAN at epoch 400- 
+
+![alt text](https://github.com/nrajmalwar/Project/blob/master/Images/generated_plot_e400.png)
