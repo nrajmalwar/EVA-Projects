@@ -1,3 +1,7 @@
+Group Members-
+1. Nishad Rajmalwar (nrajmalwar@gmail.com)
+2. Aditya Jindal (adityajindal4@gmail.com)
+
 # Model Training on MNIST dataset using Pytorch
 
 The model has following features-
