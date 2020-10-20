@@ -1,6 +1,6 @@
 # Assignment 1A #
 
-In this assignment, we will manually provide the values of 3x3 kernel in order to see how it functions. The kernels are designed to extract specific features from the image. 
+In this assignment, we will manually provide the values of 3x3 kernel in order to see how it functions. The kernels are designed to extract specific features from the image.
 
 First, let's have a look at our image:
 
