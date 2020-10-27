@@ -1,7 +1,8 @@
 ## Interpretability
 
-Grad-CAM localization for "violin, fiddle" category for different rectified convolutional feature maps for VGG16.
+Grad-CAM localization for "violin, fiddle" category for different rectified convolutional feature maps for VGG16-
 
+![](https://github.com/nrajmalwar/EVA-Projects/blob/master/Session%2010/GradCAM_violin.png)
 
 The model predicts the class id of 889 which corresponds to the class 'violin, fiddle', which is the correct class for our image.
 
