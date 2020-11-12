@@ -1,4 +1,12 @@
-# Training logs:
+## Modify DavidNet
+
+Add the following features to DavidNet-
+
+1. Move the data to TFRecords- This is done to improve the time taken to process each image while training the model
+2. Add CutOut as data augmentation to improve the model accuracy and stability
+
+
+## Training logs:
 epoch: 1 lr: 0.08 train loss: 1.5839818658447267 train acc: 0.42608 val loss: 1.2984832122802734 val acc: 0.5321 time: 60.04050898551941
 98it [00:36, 5.44it/s]
 
