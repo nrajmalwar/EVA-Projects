@@ -1,5 +1,7 @@
 # Face Recognition
 
+Run the face detector model on a video of self-
+
 1. dlib face detector
 2. Align the face using 5 point detector
 3. 68-pt landmark on aligned faces
