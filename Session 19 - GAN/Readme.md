@@ -4,7 +4,7 @@ Assignment 19 Group members -
 
 # Train a GAN to generate Gun pictures
 
-1. Scrape imgaes from guns from the internet (google images, amazon/flipkart images)
+1. Scrape images from guns from the internet (google images, amazon/flipkart images)
 2. Train a GAN to generate new pictures
 
 Real images from the dataset-
